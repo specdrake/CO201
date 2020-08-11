@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+void file_input_output()
+{
+	ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+#endif
+}
+#define pii	   		    pair<int,int>
+#define mod             1000000007
+#define ll              long long int
+#define num 			1000000
+#define rep(i,n)		for(long long int i=0;i<n;i++)
+int main()
+{
+	file_input_output();
+	int n; cin >> n;
+	int arr[n][5];
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Roll No " << (i + 1) << ": " << endl;
+		for (int j = 0; j < 5; j++)
+		{
+			cout << "Enter Marks in ";
+			switch (j)
+			{
+			case 0: { cout << "DS: "; break; }
+			case 1: { cout << "OOP: "; break; }
+			case 2: { cout << "Analog: "; break; }
+			case 3: { cout << "M&S: "; break; }
+			case 4: { cout << "Discrete: "; break; }
+			default: break;
+			}
+			cin >> arr[i][j];
+		}
+	}
+	for (int i = 0; i < n; i++)
+	{
+		cout << "DS: " << arr[i][0] << endl;
+		cout << "OOP: " << arr[i][1] << endl;
+		cout << "Analog: " << arr[i][2] << endl;
+		cout << "M&S: " << arr[i][3] << endl;
+		cout << "Discrete: " << arr[i][4] << endl;
+		double avg = 0;
+		for (int j = 0; j < 5; j++) avg += arr[i][j];
+		cout << "Average Marks :" << (avg / 5.0) << endl;
+	}
+	return 0;
+}
